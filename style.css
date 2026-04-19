@@ -1,0 +1,271 @@
+/* ========================================
+   IMAGINARIUM - STYLE TERPUSAT
+   Pisah HTML & CSS · mudah diedit
+   ======================================== */
+
+/* ---------- RESET & VARIABEL ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --warna-teks: #1e1b1b;
+    --warna-latar: #f4f2ef;
+    --warna-kartu: #fdfbf9;
+    --warna-aksen: #b28b6f;
+    --warna-gelap: #1e1b1b;
+    --border-terang: #ede6df;
+    --font-utama: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Source Serif Pro', serif;
+}
+
+body {
+    background: var(--warna-latar);
+    font-family: var(--font-utama);
+    color: var(--warna-teks);
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
+
+/* ---------- WRAPPER UTAMA ---------- */
+.magazine-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(2px);
+    border-radius: 32px;
+    box-shadow: 0 25px 45px -12px rgba(0,0,0,0.1);
+    border: 1px solid rgba(210,190,175,0.2);
+    overflow: hidden;
+}
+
+.magazine-interior {
+    padding: 2.5rem 2.8rem;
+}
+
+@media (max-width: 640px) {
+    body { padding: 0.8rem; }
+    .magazine-interior { padding: 1.8rem 1.2rem; }
+}
+
+/* ---------- HEADER & NAVIGASI (pintasan halaman) ---------- */
+.magazine-header {
+    margin-bottom: 2.5rem;
+    border-bottom: 2px solid var(--warna-gelap);
+    padding-bottom: 1.5rem;
+}
+
+.masthead h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.edition-badge {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.edition {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #5e4b3c;
+    border-left: 4px solid var(--warna-aksen);
+    padding-left: 1rem;
+}
+
+.tagline-digital {
+    background: var(--warna-gelap);
+    color: #f2e8de;
+    padding: 0.2rem 1rem;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ----- Navigasi utama (pintasan antar halaman) ----- */
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    margin: 1.8rem 0 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-terang);
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--warna-teks);
+    padding: 0.4rem 0;
+    border-bottom: 3px solid transparent;
+    transition: 0.2s;
+    font-size: 1.1rem;
+}
+
+.nav-menu a:hover,
+.nav-menu a.aktif {
+    border-bottom-color: var(--warna-aksen);
+    color: #000;
+}
+
+/* ---------- TIPOGRAFI & KOMPONEN ---------- */
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px dashed #c9bcb0;
+    padding-bottom: 0.5rem;
+}
+
+.section-title i {
+    color: #8f6e55;
+    font-size: 1.8rem;
+    width: 2rem;
+}
+
+.article-block {
+    background: var(--warna-kartu);
+    border-radius: 24px;
+    padding: 1.8rem 2rem;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+    border: 1px solid var(--border-terang);
+    margin-bottom: 2.5rem;
+    transition: 0.15s;
+}
+
+.article-block:hover {
+    border-color: #c9b2a2;
+}
+
+.article-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    line-height: 1.25;
+}
+
+.article-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6f5e51;
+    font-weight: 500;
+}
+
+.lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: var(--font-serif);
+    border-left: 4px solid var(--warna-aksen);
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.pull-quote {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    background: #f0eae4;
+    border-radius: 24px;
+    font-style: italic;
+    text-align: center;
+    border-left: 6px solid #8f6e55;
+}
+
+/* Grid dua kolom */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 700px) {
+    .two-col { grid-template-columns: 1fr; }
+}
+
+/* ---------- KARTU PROFIL TIM ---------- */
+.tim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.kartu-tim {
+    background: var(--warna-kartu);
+    border-radius: 24px;
+    padding: 1.8rem 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-terang);
+    transition: all 0.2s;
+}
+
+.kartu-tim:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px -8px rgba(0,0,0,0.1);
+    border-color: var(--warna-aksen);
+}
+
+.kartu-tim i {
+    font-size: 3.5rem;
+    color: var(--warna-aksen);
+    margin-bottom: 1rem;
+}
+
+.kartu-tim h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+}
+
+.kartu-tim .jabatan {
+    font-weight: 600;
+    color: #5e4b3c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ---------- FOOTER ---------- */
+.footer-note {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    text-align: center;
+    border-top: 1px solid #d9cec4;
+    font-size: 0.9rem;
+    color: #5b4d43;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.badge-imaginarium {
+    background: var(--warna-gelap);
+    color: #efe1d4;
+    padding: 0.2rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* highlight untuk halaman aktif di nav */
+.nav-aktif {
+    font-weight: 700;
+    border-bottom: 3px solid var(--warna-aksen) !important;
+}
