@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editorial · IMAGINARIUM</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome untuk ikon & sosmed -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animate On Scroll -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- CSS Utama -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="magazine-wrapper">
   <div class="magazine-interior">
+
+    <!-- HEADER & NAVIGASI -->
     <header class="magazine-header">
       <div class="masthead">
         <h1>IMAGINARIUM</h1>
@@ -22,38 +33,164 @@
       <nav class="nav-menu">
         <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
         <a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a>
+        <!-- Halaman ini aktif -->
         <a href="editorial.html" class="aktif"><i class="fas fa-feather-alt"></i> Editorial</a>
         <a href="tim.html"><i class="fas fa-users"></i> Tim</a>
       </nav>
     </header>
 
-    <!-- Pesan Redaksi -->
-    <section class="article-block">
-      <div class="article-title"><i class="fas fa-feather-alt"></i> Pesan Redaksi</div>
-      <div class="lead">“Selamat datang di ruang hibrida di mana teknologi digital bertemu dengan keajaiban fiksi.”</div>
-      <p>Selamat datang di edisi perdana IMAGINARIUM. Kami percaya bahwa di tengah hiruk-pikuk era otomatisasi, imajinasi tetap menjadi kekuatan manusia yang paling fundamental. Majalah ini hadir sebagai wadah kreativitas bagi generasi muda untuk mengekspresikan ide-ide imajinatif.</p>
-      <p>Dalam edisi kali ini, kami mengusung tema "Eksplorasi Dunia Imajinasi Tanpa Batas". Melalui rubrik Feature, kami mengajak Anda menelusuri fenomena "Renaisans Imajinasi". Dengan integrasi desain UI/UX yang sistematis, kami memastikan pengalaman membaca terasa imersif.</p>
-      <p>Akhir kata, IMAGINARIUM adalah panggilan untuk merayakan kemerdekaan berpikir. Selamat menjelajahi cakrawala baru!</p>
+    <!-- ============================================================
+         PESAN REDAKSI
+         GAMBAR dari Unsplash - tema redaksi/penulisan
+         GANTI GAMBAR: ubah src di bawah
+         ============================================================ -->
+    <section class="article-block" data-aos="fade-up">
+      <!-- Gambar header editorial - tema penulisan dan redaksi -->
+      <div class="img-wrapper">
+        <img
+          src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1000&q=80"
+          alt="Meja kerja redaksi dengan laptop dan catatan — representasi proses editorial dan penulisan kreatif"
+        >
+      </div>
+
+      <div style="margin-bottom: 0.8rem;">
+        <span class="tag">✦ Dari Redaksi</span>
+      </div>
+
+      <div class="article-title">
+        <i class="fas fa-feather-alt" style="color: var(--warna-aksen3);"></i>
+        Pesan Redaksi
+      </div>
+
+      <p class="lead">
+        "Selamat datang di ruang hibrida di mana teknologi digital bertemu dengan keajaiban fiksi."
+      </p>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1.2rem;">
+        Selamat datang di edisi perdana IMAGINARIUM. Kami percaya bahwa di tengah hiruk-pikuk era otomatisasi,
+        imajinasi tetap menjadi kekuatan manusia yang paling fundamental.
+        Majalah ini hadir sebagai wadah kreativitas bagi generasi muda untuk mengekspresikan ide-ide imajinatif.
+      </p>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1.2rem;">
+        Dalam edisi kali ini, kami mengusung tema <strong style="color: var(--warna-aksen3);">"Eksplorasi Dunia Imajinasi Tanpa Batas"</strong>.
+        Melalui rubrik Feature, kami mengajak Anda menelusuri fenomena "Renaisans Imajinasi".
+        Dengan integrasi desain UI/UX yang sistematis, kami memastikan pengalaman membaca terasa imersif.
+      </p>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9;">
+        Akhir kata, IMAGINARIUM adalah panggilan untuk merayakan kemerdekaan berpikir. Selamat menjelajahi cakrawala baru!
+      </p>
     </section>
 
-    <!-- Rubrik Opini -->
-    <section class="article-block" style="border-left: 8px solid #1e1b1b;">
-      <div class="article-title"><i class="fas fa-laptop-code"></i> Sudut Pandang: Harmoni Logika Digital dan Kedalaman Rasa</div>
-      <div class="article-meta">Mahasiswa TI UHAMKA · kolaborasi</div>
-      <p>Edisi perdana IMAGINARIUM hadir di tengah “Renaisans Imajinasi” di lingkungan mahasiswa Teknik Informatika UHAMKA. Di tengah rutinitas perkuliahan yang dipenuhi baris kode, fiksi digital muncul sebagai ruang alternatif untuk berpikir dan berekspresi.</p>
-      <p>Namun, muncul refleksi: apakah kita hanya sibuk membangun sistem yang bekerja secara teknis, tetapi lupa pada manusia yang akan menggunakannya? Sebuah aplikasi yang sempurna secara teknis kehilangan makna jika tidak menyentuh kebutuhan nyata pengguna.</p>
-      <p>Oleh karena itu, masa depan mahasiswa TI bukan hanya pada kode efisien, tetapi juga kemampuan memahami realitas sosial. IMAGINARIUM menjadi simbol bahwa teknologi dan imajinasi berjalan berdampingan.</p>
-      <div style="margin-top:1.8rem; font-style:italic; border-top:1px dashed #b28b6f; padding-top:1rem;">
-        <i class="fas fa-quote-right" style="color:#8f6e55;"></i> “Kemampuan untuk tetap memandang manusia di balik setiap sistem yang kita ciptakan.”
+    <!-- ============================================================
+         RUBRIK OPINI
+         GAMBAR dari Unsplash - tema teknologi/mahasiswa
+         GANTI GAMBAR: ubah src di bawah
+         ============================================================ -->
+    <section class="article-block bordered" data-aos="fade-up">
+      <!-- Gambar opini - tema mahasiswa dan teknologi -->
+      <div class="img-wrapper">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&q=80"
+          alt="Mahasiswa berdiskusi dengan laptop — menggambarkan kolaborasi dan pertukaran ide di era digital"
+        >
+      </div>
+
+      <div style="margin-bottom: 0.8rem;">
+        <span class="tag">opini</span>
+        <span class="tag">teknologi</span>
+      </div>
+
+      <div class="article-title">
+        <i class="fas fa-laptop-code" style="color: var(--warna-aksen2);"></i>
+        Sudut Pandang: Harmoni Logika Digital dan Kedalaman Rasa
+      </div>
+
+      <div class="article-meta">
+        <span><i class="fas fa-users"></i> Mahasiswa TI UHAMKA</span>
+        <span>kolaborasi</span>
+      </div>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1.2rem;">
+        Edisi perdana IMAGINARIUM hadir di tengah "Renaisans Imajinasi" di lingkungan mahasiswa Teknik Informatika UHAMKA.
+        Di tengah rutinitas perkuliahan yang dipenuhi baris kode, fiksi digital muncul sebagai ruang alternatif untuk berpikir dan berekspresi.
+      </p>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1.2rem;">
+        Namun, muncul refleksi: apakah kita hanya sibuk membangun sistem yang bekerja secara teknis, tetapi lupa pada manusia yang akan menggunakannya?
+        Sebuah aplikasi yang sempurna secara teknis kehilangan makna jika tidak menyentuh kebutuhan nyata pengguna.
+      </p>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1.5rem;">
+        Oleh karena itu, masa depan mahasiswa TI bukan hanya pada kode efisien, tetapi juga kemampuan memahami realitas sosial.
+        IMAGINARIUM menjadi simbol bahwa teknologi dan imajinasi berjalan berdampingan.
+      </p>
+
+      <!-- Kutipan penutup -->
+      <div style="margin-top: 1.8rem; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 1.2rem; display: flex; align-items: flex-start; gap: 1rem;">
+        <i class="fas fa-quote-right" style="color: var(--warna-aksen); font-size: 1.5rem; flex-shrink: 0; margin-top: 0.2rem;"></i>
+        <em style="color: rgba(232,230,240,0.6); font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.7;">
+          "Kemampuan untuk tetap memandang manusia di balik setiap sistem yang kita ciptakan."
+        </em>
       </div>
     </section>
 
-    <div class="footer-note">
+    <!-- ============================================================
+         FEEDBACK SECTION
+         GANTI LINK GOOGLE FORM: ubah href di <a> di bawah
+         ============================================================ -->
+    <section class="feedback-section" data-aos="fade-up">
+      <div style="font-size: 2rem; margin-bottom: 0.8rem;">📝</div>
+      <h3>Bagikan Opini Kamu!</h3>
+      <p>Setuju atau tidak setuju dengan editorial ini? Atau punya sudut pandang lain? Kami ingin mendengar suara kamu.</p>
+      <!-- GANTI href dengan link Google Form asli kamu -->
+      <a
+        href="https://forms.gle/GANTIDENGANLINKFORMKAMU"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-feedback"
+      >
+        <i class="fas fa-comment-dots"></i> Sampaikan Pendapatmu
+      </a>
+    </section>
+
+    <!-- FOOTER dengan sosial media -->
+    <footer class="footer-note">
       <div><span class="badge-imaginarium">✦ IMAGINARIUM · editorial</span></div>
-      <div>suara dari redaksi</div>
-      <div><i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i></div>
-    </div>
+      <div style="color: rgba(232,230,240,0.4);">suara dari redaksi</div>
+
+      <!-- Ikon sosial media -->
+      <!-- GANTI href dengan akun sosmed asli -->
+      <div class="social-links">
+        <a href="https://www.instagram.com/uhamkaid?igsh=YWpzdTBmZ211djMx" target="_blank" rel="noopener noreferrer"
+           class="social-icon instagram" aria-label="Instagram" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://x.com/UhamkaID" target="_blank" rel="noopener noreferrer"
+           class="social-icon twitter" aria-label="Twitter/X" title="Twitter / X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://www.uhamka.ac.id/  " target="_blank" rel="noopener noreferrer"
+           class="social-icon website" aria-label="Website" title="Website">
+          <i class="fas fa-globe"></i>
+        </a>
+      </div>
+    </footer>
+
   </div>
 </div>
+
+<!-- AOS Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // Inisialisasi AOS - ubah pengaturan di sini
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out-quart',
+    once: true,
+    offset: 80
+  });
+</script>
 </body>
 </html>

@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artikel · IMAGINARIUM</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome untuk ikon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animate On Scroll -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- CSS Utama -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="magazine-wrapper">
   <div class="magazine-interior">
+
+    <!-- HEADER & NAVIGASI -->
     <header class="magazine-header">
       <div class="masthead">
         <h1>IMAGINARIUM</h1>
@@ -21,54 +32,235 @@
       </div>
       <nav class="nav-menu">
         <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+        <!-- Halaman ini aktif -->
         <a href="artikel.html" class="aktif"><i class="fas fa-newspaper"></i> Artikel</a>
         <a href="editorial.html"><i class="fas fa-feather-alt"></i> Editorial</a>
         <a href="tim.html"><i class="fas fa-users"></i> Tim</a>
       </nav>
     </header>
 
-    <!-- Artikel 1: Membangun Karakter -->
-    <section id="karakter" class="article-block">
-      <div class="article-title"><i class="fas fa-user-astronaut"></i> Menghidupkan Kata: Seni Membangun Karakter yang Autentik</div>
-      <div class="article-meta"><span><i class="far fa-clock"></i> 5 menit</span><span>fiksi kreatif</span></div>
-      <p>Dalam dunia fiksi, karakter adalah inti dari sebuah cerita. Tanpa karakter yang kuat, alur sebaik apa pun akan terasa datar. Seorang penulis tidak cukup hanya memberi nama dan latar belakang, tetapi juga perlu membangun keinginan, ketakutan, dan tujuan yang jelas. Coba tanyakan: apa yang paling diinginkan karakter ini? Apa yang paling ia hindari? Dari situ, cerita akan mulai bergerak dengan sendirinya.</p>
-      <p>Selain itu, hal-hal kecil justru sering membuat karakter terasa nyata. Daripada langsung mengatakan bahwa karakter sedang gugup, lebih baik tunjukkan melalui tindakan—misalnya tangan yang terus bergerak, atau cara bicara yang terbata. Teknik ini membuat pembaca ikut merasakan, bukan sekadar diberi tahu. Konsistensi juga penting: cara bicara, sikap, dan reaksi karakter harus terasa selaras sepanjang cerita agar tidak terasa dibuat-buat.</p>
-      <p>Terakhir, karakter yang menarik biasanya lahir dari pengamatan sederhana terhadap kehidupan sehari-hari. Tidak perlu sempurna—justru kekurangan dan kesalahan membuat mereka terasa lebih manusiawi. Biarkan karakter berkembang seiring cerita berjalan, belajar dari masalah yang mereka hadapi.</p>
+    <!-- ============================================================
+         ARTIKEL 1: Membangun Karakter
+         GAMBAR dari Unsplash - tema menulis/fiksi
+         GANTI GAMBAR: ubah src di bawah ke URL pilihan kamu
+         ============================================================ -->
+    <section id="karakter" class="article-block" data-aos="fade-up">
+      <!-- Gambar header artikel - tema menulis dan fiksi -->
+      <div class="img-wrapper">
+        <img
+          src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1000&q=80"
+          alt="Tangan menulis di kertas dengan pena — menggambarkan proses membangun karakter fiksi yang autentik"
+        >
+      </div>
+
+      <div style="margin-bottom: 0.8rem;">
+        <!-- Tag kategori -->
+        <span class="tag">fiksi kreatif</span>
+        <span class="tag">penulisan</span>
+      </div>
+
+      <div class="article-title">
+        <i class="fas fa-user-astronaut" style="color: var(--warna-aksen);"></i>
+        Menghidupkan Kata: Seni Membangun Karakter yang Autentik
+      </div>
+
+      <div class="article-meta">
+        <span><i class="far fa-clock"></i> 5 menit baca</span>
+        <span><i class="fas fa-tag"></i> fiksi kreatif</span>
+      </div>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1.2rem;">
+        Dalam dunia fiksi, karakter adalah inti dari sebuah cerita. Tanpa karakter yang kuat, alur sebaik apa pun akan terasa datar.
+        Seorang penulis tidak cukup hanya memberi nama dan latar belakang, tetapi juga perlu membangun keinginan, ketakutan, dan tujuan yang jelas.
+        Coba tanyakan: apa yang paling diinginkan karakter ini? Apa yang paling ia hindari? Dari situ, cerita akan mulai bergerak dengan sendirinya.
+      </p>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1.2rem;">
+        Selain itu, hal-hal kecil justru sering membuat karakter terasa nyata. Daripada langsung mengatakan bahwa karakter sedang gugup,
+        lebih baik tunjukkan melalui tindakan—misalnya tangan yang terus bergerak, atau cara bicara yang terbata.
+        Teknik ini membuat pembaca ikut merasakan, bukan sekadar diberi tahu.
+        Konsistensi juga penting: cara bicara, sikap, dan reaksi karakter harus terasa selaras sepanjang cerita agar tidak terasa dibuat-buat.
+      </p>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9;">
+        Terakhir, karakter yang menarik biasanya lahir dari pengamatan sederhana terhadap kehidupan sehari-hari.
+        Tidak perlu sempurna—justru kekurangan dan kesalahan membuat mereka terasa lebih manusiawi.
+        Biarkan karakter berkembang seiring cerita berjalan, belajar dari masalah yang mereka hadapi.
+      </p>
     </section>
 
-    <!-- Artikel 2: Esensi Imaginarium -->
-    <section id="esensi" class="article-block">
-      <div class="article-title"><i class="fas fa-infinity"></i> Gerbang Menuju Dunia Tanpa Batas: Esensi Imaginarium</div>
-      <div class="article-meta"><span>eksplorasi media</span></div>
-      <p>Imaginarium bukan sekadar media informasi, melainkan ruang kreatif di mana realitas dan imajinasi saling bertemu. Di tengah dunia digital yang serba cepat, fiksi menjadi cara bagi mahasiswa untuk berhenti sejenak, sekaligus mengekspresikan hal-hal yang sering kali sulit disampaikan secara langsung.</p>
-      <p>Sebagai majalah digital, Imaginarium juga memanfaatkan teknologi untuk memperkuat pengalaman membaca. Desain yang interaktif, tata letak yang rapi, serta tampilan visual yang konsisten membuat setiap karya terasa lebih hidup di layar.</p>
-      <p>Pada akhirnya, Imaginarium adalah ajakan terbuka bagi remaja dan mahasiswa untuk mulai berkarya. Tidak harus sempurna, yang penting berani memulai.</p>
+    <hr class="divider">
+
+    <!-- ============================================================
+         ARTIKEL 2: Esensi Imaginarium
+         GAMBAR dari Unsplash - tema digital/abstrak
+         GANTI GAMBAR: ubah src di bawah
+         ============================================================ -->
+    <section id="esensi" class="article-block" data-aos="fade-up">
+      <!-- Gambar header artikel - tema media digital dan kreativitas -->
+      <div class="img-wrapper">
+        <img
+          src="https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?w=1000&q=80"
+          alt="Cahaya dan proyeksi digital berwarna-warni — melambangkan perpaduan antara teknologi modern dan imajinasi kreatif"
+        >
+      </div>
+
+      <div style="margin-bottom: 0.8rem;">
+        <span class="tag">eksplorasi media</span>
+        <span class="tag">digital</span>
+      </div>
+
+      <div class="article-title">
+        <i class="fas fa-infinity" style="color: var(--warna-aksen2);"></i>
+        Gerbang Menuju Dunia Tanpa Batas: Esensi Imaginarium
+      </div>
+
+      <div class="article-meta">
+        <span><i class="fas fa-tag"></i> eksplorasi media</span>
+      </div>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1.2rem;">
+        Imaginarium bukan sekadar media informasi, melainkan ruang kreatif di mana realitas dan imajinasi saling bertemu.
+        Di tengah dunia digital yang serba cepat, fiksi menjadi cara bagi mahasiswa untuk berhenti sejenak,
+        sekaligus mengekspresikan hal-hal yang sering kali sulit disampaikan secara langsung.
+      </p>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1.2rem;">
+        Sebagai majalah digital, Imaginarium juga memanfaatkan teknologi untuk memperkuat pengalaman membaca.
+        Desain yang interaktif, tata letak yang rapi, serta tampilan visual yang konsisten membuat setiap karya terasa lebih hidup di layar.
+      </p>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9;">
+        Pada akhirnya, Imaginarium adalah ajakan terbuka bagi remaja dan mahasiswa untuk mulai berkarya.
+        Tidak harus sempurna, yang penting berani memulai.
+      </p>
     </section>
 
-    <!-- Feature: Renaisans Imajinasi -->
-    <section class="article-block">
-      <div class="article-title" style="font-size: clamp(1.4rem, 5vw, 2.2rem);"><i class="fas fa-rocket"></i> Renaisans Imajinasi: Menavigasi Fiksi di Era Digital</div>
-      <div class="lead">“Perubahan ini melahirkan Renaisans Imajinasi, di mana jarak antara penulis dan pembaca semakin tipis.”</div>
-      <div class="two-col">
-        <div>
-          <p>Di era digital saat ini, fiksi tidak lagi hidup di halaman kertas, tetapi berpindah ke layar yang bisa disentuh, digeser, dan dijelajahi. Perubahan ini melahirkan “Renaisans Imajinasi”. Majalah digital bukan hanya tempat membaca cerita, tetapi juga menghadirkan pengalaman yang lebih interaktif.</p>
-          <p>Peran teknologi menjadi penting dalam membentuk pengalaman tersebut. Desain UI/UX yang rapi dan navigasi yang jelas membantu pembaca menikmati cerita tanpa hambatan.</p>
+    <hr class="divider">
+
+    <!-- ============================================================
+         FEATURE ARTIKEL: Renaisans Imajinasi
+         Artikel utama dengan layout dua kolom dan pull quote
+         GAMBAR dari Unsplash - tema futuristik/teknologi
+         GANTI GAMBAR: ubah src di bawah
+         ============================================================ -->
+    <section class="article-block" data-aos="fade-up">
+      <!-- Gambar feature besar - tema teknologi futuristik -->
+      <div class="img-wrapper">
+        <img
+          src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=80"
+          alt="Abstrak teknologi digital dengan hologram dan cahaya biru — merepresentasikan era digital dan renaisans imajinasi"
+          style="height: 380px;"
+        >
+      </div>
+
+      <div style="margin-bottom: 0.8rem;">
+        <span class="tag">✦ Feature Utama</span>
+        <span class="tag">teknologi</span>
+        <span class="tag">fiksi digital</span>
+      </div>
+
+      <div class="article-title" style="font-size: 2.5rem;" data-aos="fade-up">
+        <i class="fas fa-rocket" style="color: var(--warna-aksen3);"></i>
+        Renaisans Imajinasi: Menavigasi Fiksi di Era Digital
+      </div>
+
+      <p class="lead">
+        "Perubahan ini melahirkan Renaisans Imajinasi, di mana jarak antara penulis dan pembaca semakin tipis."
+      </p>
+
+      <!-- Konten dua kolom -->
+      <div class="two-col" style="margin-bottom: 1.5rem;">
+        <div data-aos="fade-right">
+          <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1rem;">
+            Di era digital saat ini, fiksi tidak lagi hidup di halaman kertas, tetapi berpindah ke layar yang bisa disentuh, digeser, dan dijelajahi.
+            Perubahan ini melahirkan "Renaisans Imajinasi". Majalah digital bukan hanya tempat membaca cerita, tetapi juga menghadirkan pengalaman yang lebih interaktif.
+          </p>
+          <p style="color: rgba(232,230,240,0.75); line-height: 1.9;">
+            Peran teknologi menjadi penting dalam membentuk pengalaman tersebut. Desain UI/UX yang rapi dan navigasi yang jelas membantu pembaca menikmati cerita tanpa hambatan.
+          </p>
         </div>
-        <div>
-          <p>Lebih dari itu, fiksi digital membuka ruang baru bagi mahasiswa untuk mengekspresikan diri. Ide-ide yang sebelumnya hanya tersimpan kini dapat dituangkan dan dibagikan lebih luas.</p>
-          <p>Namun, Renaisans Imajinasi ini juga membawa pertanyaan: bagaimana kita memposisikan diri di tengah arus teknologi? Di lingkungan akademik seperti Teknik Informatika UHAMKA, kita bukan hanya pengguna teknologi, tetapi juga calon perancangnya.</p>
+
+        <div data-aos="fade-left">
+          <p style="color: rgba(232,230,240,0.75); line-height: 1.9; margin-bottom: 1rem;">
+            Lebih dari itu, fiksi digital membuka ruang baru bagi mahasiswa untuk mengekspresikan diri.
+            Ide-ide yang sebelumnya hanya tersimpan kini dapat dituangkan dan dibagikan lebih luas.
+          </p>
+          <p style="color: rgba(232,230,240,0.75); line-height: 1.9;">
+            Namun, Renaisans Imajinasi ini juga membawa pertanyaan: bagaimana kita memposisikan diri di tengah arus teknologi?
+            Di lingkungan akademik seperti Teknik Informatika UHAMKA, kita bukan hanya pengguna teknologi, tetapi juga calon perancangnya.
+          </p>
         </div>
       </div>
-      <div class="pull-quote">“Di era digital ini, yang membedakan kita bukan hanya kemampuan menguasai teknologi, tetapi juga kemampuan memberi makna pada apa yang kita ciptakan.”</div>
-      <p>Majalah IMAGINARIUM hadir sebagai bagian dari perjalanan tersebut, ruang untuk memahami bagaimana ide, teknologi, dan imajinasi berjalan bersama.</p>
+
+      <!-- Pull quote bergaya majalah -->
+      <div class="pull-quote" data-aos="fade-up">
+        "Di era digital ini, yang membedakan kita bukan hanya kemampuan menguasai teknologi,
+        tetapi juga kemampuan memberi makna pada apa yang kita ciptakan."
+      </div>
+
+      <p style="color: rgba(232,230,240,0.75); line-height: 1.9;">
+        Majalah IMAGINARIUM hadir sebagai bagian dari perjalanan tersebut,
+        ruang untuk memahami bagaimana ide, teknologi, dan imajinasi berjalan bersama.
+      </p>
     </section>
 
-    <div class="footer-note">
+    <!-- ============================================================
+         FEEDBACK SECTION
+         GANTI LINK GOOGLE FORM: ubah href di <a> di bawah
+         ============================================================ -->
+    <section class="feedback-section" data-aos="fade-up">
+      <div style="font-size: 2rem; margin-bottom: 0.8rem;">✍️</div>
+      <h3>Ada artikel yang ingin kamu usulkan?</h3>
+      <p>Sampaikan ide atau masukan kamu tentang konten IMAGINARIUM. Kami baca setiap masukan!</p>
+      <!-- GANTI href dengan link Google Form asli kamu -->
+      <a
+        href="https://forms.gle/GANTIDENGANLINKFORMKAMU"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-feedback"
+      >
+        <i class="fas fa-comment-dots"></i> Kirim Masukan
+      </a>
+    </section>
+
+    <!-- FOOTER dengan sosial media -->
+    <footer class="footer-note">
       <div><span class="badge-imaginarium">✦ IMAGINARIUM · artikel</span></div>
-      <div>imajinasi tanpa batas</div>
-      <div><i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i></div>
-    </div>
+      <div style="color: rgba(232,230,240,0.4);">imajinasi tanpa batas</div>
+
+      <!-- Ikon sosial media -->
+      <!-- GANTI href dengan akun sosmed asli -->
+      <div class="social-links">
+        <a href="https://instagram.com/AKUN_INSTAGRAM_KAMU" target="_blank" rel="noopener noreferrer"
+           class="social-icon instagram" aria-label="Instagram" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/AKUN_TWITTER_KAMU" target="_blank" rel="noopener noreferrer"
+           class="social-icon twitter" aria-label="Twitter/X" title="Twitter / X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://WEBSITE_KAMU.com" target="_blank" rel="noopener noreferrer"
+           class="social-icon website" aria-label="Website" title="Website">
+          <i class="fas fa-globe"></i>
+        </a>
+      </div>
+    </footer>
+
   </div>
 </div>
+
+<!-- AOS Script - animasi scroll -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // Inisialisasi AOS
+  // Ubah durasi dan pengaturan di sini
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out-quart',
+    once: true,
+    offset: 80
+  });
+</script>
 </body>
 </html>

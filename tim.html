@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tim Redaksi · IMAGINARIUM</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome untuk ikon & sosmed -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animate On Scroll -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- CSS Utama -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="magazine-wrapper">
   <div class="magazine-interior">
+
+    <!-- HEADER & NAVIGASI -->
     <header class="magazine-header">
       <div class="masthead">
         <h1>IMAGINARIUM</h1>
@@ -23,57 +34,121 @@
         <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
         <a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a>
         <a href="editorial.html"><i class="fas fa-feather-alt"></i> Editorial</a>
+        <!-- Halaman ini aktif -->
         <a href="tim.html" class="aktif"><i class="fas fa-users"></i> Tim</a>
       </nav>
     </header>
 
-    <div class="section-title">
-      <i class="fas fa-user-edit"></i> Redaksi IMAGINARIUM
+    <!-- Section title -->
+    <div class="section-title" data-aos="fade-right">
+      <i class="fas fa-user-edit"></i>
+      Redaksi IMAGINARIUM
       <span>edisi perdana</span>
     </div>
 
+    <!-- ============================================================
+         GRID TIM REDAKSI
+         Setiap kartu punya efek hover lift + gradient
+         data-aos-delay: kartu muncul bergantian
+         ============================================================ -->
     <div class="tim-grid">
+
       <!-- Satria - Chief Editor -->
-      <div class="kartu-tim">
+      <div class="kartu-tim" data-aos="fade-up" data-aos-delay="100">
         <i class="fas fa-crown"></i>
         <h3>Satria</h3>
         <div class="jabatan">Chief Editor</div>
         <p>Memimpin visi kreatif, memastikan setiap edisi menghadirkan keseimbangan teknologi dan imajinasi.</p>
       </div>
+
       <!-- Aditya Prima - Editor Bahasa -->
-      <div class="kartu-tim">
+      <div class="kartu-tim" data-aos="fade-up" data-aos-delay="200">
         <i class="fas fa-spell-check"></i>
         <h3>Aditya Prima</h3>
         <div class="jabatan">Editor Bahasa</div>
         <p>Merapikan diksi dan alur bahasa agar narasi mengalir indah, imersif, dan mudah dinikmati.</p>
       </div>
+
       <!-- Muhammad Miftahhudin - Editor Isi -->
-      <div class="kartu-tim">
+      <div class="kartu-tim" data-aos="fade-up" data-aos-delay="300">
         <i class="fas fa-pen"></i>
         <h3>Muhammad Miftahhudin</h3>
         <div class="jabatan">Editor Isi</div>
         <p>Menjaga kedalaman konten, memastikan setiap artikel memiliki fondasi ide yang kuat dan bermakna.</p>
       </div>
+
       <!-- Muhammad Ihsan Rais - Layout/Desain -->
-      <div class="kartu-tim">
+      <div class="kartu-tim" data-aos="fade-up" data-aos-delay="400">
         <i class="fas fa-paint-brush"></i>
         <h3>Muhammad Ihsan Rais</h3>
         <div class="jabatan">Layout / Desain</div>
         <p>Merancang pengalaman visual yang memadukan UI/UX sistematis dengan sentuhan artistik digital.</p>
       </div>
+
     </div>
 
-    <!-- Tambahan info singkat -->
-    <div style="margin-top: 2.5rem; font-style: italic; text-align: right; opacity: 0.8;">
-      “Imajinasi adalah tim. Bersama, kami wujudkan ruang tanpa batas.”
+    <!-- Kutipan tim -->
+    <div style="margin-top: 3rem; margin-bottom: 2rem;" data-aos="fade-up">
+      <div class="pull-quote">
+        "Imajinasi adalah tim. Bersama, kami wujudkan ruang tanpa batas."
+      </div>
     </div>
 
-    <div class="footer-note">
+    <!-- ============================================================
+         FEEDBACK SECTION
+         GANTI LINK GOOGLE FORM: ubah href di <a> di bawah
+         ============================================================ -->
+    <section class="feedback-section" data-aos="fade-up">
+      <div style="font-size: 2rem; margin-bottom: 0.8rem;">👋</div>
+      <h3>Ingin Bergabung dengan Tim?</h3>
+      <p>Punya semangat untuk menulis, mendesain, atau berkontribusi? Hubungi kami lewat form di bawah!</p>
+      <!-- GANTI href dengan link Google Form asli kamu -->
+      <a
+        href="https://forms.gle/GANTIDENGANLINKFORMKAMU"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-feedback"
+      >
+        <i class="fas fa-paper-plane"></i> Hubungi Tim
+      </a>
+    </section>
+
+    <!-- FOOTER dengan sosial media -->
+    <footer class="footer-note">
       <div><span class="badge-imaginarium">✦ IMAGINARIUM · tim redaksi</span></div>
-      <div>kolaborasi mahasiswa</div>
-      <div><i class="fab fa-twitter"></i> <i class="fab fa-instagram"></i></div>
-    </div>
+      <div style="color: rgba(232,230,240,0.4);">kolaborasi mahasiswa</div>
+
+      <!-- Ikon sosial media -->
+      <!-- GANTI href dengan akun sosmed asli -->
+      <div class="social-links">
+        <a href="https://instagram.com/AKUN_INSTAGRAM_KAMU" target="_blank" rel="noopener noreferrer"
+           class="social-icon instagram" aria-label="Instagram" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/AKUN_TWITTER_KAMU" target="_blank" rel="noopener noreferrer"
+           class="social-icon twitter" aria-label="Twitter/X" title="Twitter / X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://WEBSITE_KAMU.com" target="_blank" rel="noopener noreferrer"
+           class="social-icon website" aria-label="Website" title="Website">
+          <i class="fas fa-globe"></i>
+        </a>
+      </div>
+    </footer>
+
   </div>
 </div>
+
+<!-- AOS Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // Inisialisasi AOS - ubah pengaturan di sini
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out-quart',
+    once: true,
+    offset: 80
+  });
+</script>
 </body>
 </html>

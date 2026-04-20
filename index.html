@@ -4,26 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMAGINARIUM · Beranda</title>
-  <!-- Font & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- CSS Terpisah -->
+
+  <!-- ============================================================
+       FONT GOOGLE - Syne untuk display, DM Sans untuk body
+       Ganti di sini jika ingin font berbeda
+       ============================================================ -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome untuk ikon (termasuk sosmed) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animation Library - untuk animasi scroll -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- CSS Utama -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="magazine-wrapper">
   <div class="magazine-interior">
 
-    <!-- HEADER & NAVIGASI -->
+    <!-- ============================================================
+         HEADER & NAVIGASI
+         Aktifkan halaman ini dengan class "aktif" pada link yang sesuai
+         ============================================================ -->
     <header class="magazine-header">
       <div class="masthead">
+        <!-- Logo teks majalah - gradient animasi -->
         <h1>IMAGINARIUM</h1>
         <div class="edition-badge">
           <div class="edition">Edisi Perdana · Eksplorasi Imajinasi Tanpa Batas</div>
           <div class="tagline-digital"><i class="fas fa-cube"></i> ruang hibrida digital</div>
         </div>
       </div>
-      <!-- Pintasan halaman (navbar) -->
+
+      <!-- Navigasi antar halaman -->
       <nav class="nav-menu">
         <a href="index.html" class="aktif"><i class="fas fa-home"></i> Beranda</a>
         <a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a>
@@ -32,49 +47,206 @@
       </nav>
     </header>
 
-    <!-- KONTEN HOMEPAGE: Cover & Highlight -->
-    <section style="margin-bottom: 2rem;">
-      <div class="article-block" style="background: linear-gradient(145deg, #f5efe9, #fff);">
-        <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-          <div style="flex:2; min-width: 220px;">
-            <div class="article-title" style="font-size: clamp(1.8rem, 6vw, 3rem); line-height: 1.1;">
-              <i class="fas fa-infinity" style="color: #b28b6f;"></i> Renaisans Imajinasi
-            </div>
-            <p class="lead">Majalah digital pertama yang merayakan logika dan rasa — dari mahasiswa, untuk penjelajah ide.</p>
-            <p>Selamat datang di IMAGINARIUM. Kami hadir sebagai ruang hibrida tempat teknologi dan fiksi bersatu. Edisi perdana ini mengusung tema "Eksplorasi Dunia Imajinasi Tanpa Batas". Temukan artikel mendalam tentang seni membangun karakter, fenomena fiksi digital, serta suara mahasiswa Teknik Informatika UHAMKA.</p>
-            <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center;">
-              <a href="artikel.html" style="background: #1e1b1b; color: white; padding: 0.65rem 1.5rem; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.95rem;"><i class="fas fa-arrow-right"></i> Jelajahi Artikel</a>
-              <a href="editorial.html" style="color: #1e1b1b; text-decoration: underline; font-weight: 500;">Baca Editorial →</a>
-            </div>
+    <!-- ============================================================
+         HERO SECTION - Cover utama halaman
+         data-aos: animasi saat scroll (gunakan "fade-up", "fade-right", dll)
+         ============================================================ -->
+    <!-- Gambar hero dari Unsplash - tema imajinasi/buku -->
+    <!-- GANTI SRC GAMBAR: ubah URL Unsplash di bawah -->
+    <section class="hero-section" data-aos="fade-up">
+      <div class="img-wrapper" style="margin-bottom: 2rem;">
+        <img
+          src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80"
+          alt="Tumpukan buku terbuka dengan cahaya — representasi imajinasi dan eksplorasi literatur digital"
+          style="height: 360px; border-radius: 16px;"
+        >
+      </div>
+
+      <div style="display: flex; align-items: flex-start; gap: 2.5rem; flex-wrap: wrap; position: relative; z-index: 2;">
+        <div style="flex: 2; min-width: 260px;">
+          <!-- Tag kategori -->
+          <div style="margin-bottom: 1rem;">
+            <span class="tag">✦ Edisi Perdana</span>
+            <span class="tag">Eksplorasi</span>
           </div>
-          <div style="flex:1; min-width: 80px; text-align: center; font-size: clamp(3rem, 10vw, 5rem); color: #8f6e55;">
-            <i class="fas fa-book-open"></i>
+
+          <div class="article-title" style="font-size: 3.2rem; line-height: 1.1; margin-bottom: 1.2rem;">
+            <i class="fas fa-infinity" style="background: linear-gradient(135deg,#ff6b6b,#f9ca24); -webkit-background-clip:text; -webkit-text-fill-color:transparent;"></i>
+            Renaisans Imajinasi
           </div>
+
+          <p class="lead">Majalah digital pertama yang merayakan logika dan rasa — dari mahasiswa, untuk penjelajah ide.</p>
+
+          <p style="color: rgba(232,230,240,0.7); margin-bottom: 2rem; line-height: 1.8;">
+            Selamat datang di IMAGINARIUM. Kami hadir sebagai ruang hibrida tempat teknologi dan fiksi bersatu.
+            Edisi perdana ini mengusung tema <strong style="color:#f9ca24;">"Eksplorasi Dunia Imajinasi Tanpa Batas"</strong>.
+            Temukan artikel mendalam tentang seni membangun karakter, fenomena fiksi digital, serta suara mahasiswa Teknik Informatika UHAMKA.
+          </p>
+
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <!-- Tombol utama - ganti href untuk link halaman -->
+            <a href="artikel.html" class="btn-primer">
+              <i class="fas fa-arrow-right"></i> Jelajahi Artikel
+            </a>
+            <!-- Tombol sekunder -->
+            <a href="editorial.html" class="btn-sekunder">
+              Baca Editorial <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Ikon dekoratif animasi float -->
+        <div style="flex:1; text-align: center; font-size: 5rem; color: var(--warna-aksen); animation: floatSlow 3s ease-in-out infinite; min-width: 100px; display: flex; align-items: center; justify-content: center;">
+          <i class="fas fa-book-open" style="background: linear-gradient(135deg,#a29bfe,#fd79a8); -webkit-background-clip:text; -webkit-text-fill-color:transparent;"></i>
         </div>
       </div>
     </section>
 
-    <!-- Cuplikan konten unggulan -->
-    <div class="two-col">
-      <div class="article-block">
-        <h3><i class="fas fa-pen-fancy"></i> Karakter Autentik</h3>
-        <p>“Tanpa karakter yang kuat, alur sebaik apa pun akan terasa datar.” Pelajari teknik menghidupkan tokoh fiksi.</p>
-        <a href="artikel.html#karakter" style="font-weight: 600;">Baca selengkapnya →</a>
+    <!-- ============================================================
+         HIGHLIGHT KONTEN - 2 kartu unggulan
+         data-aos="fade-up" = muncul dari bawah saat discroll
+         data-aos-delay = jeda antar kartu (dalam ms)
+         ============================================================ -->
+    <div class="two-col" style="margin-bottom: 2.5rem;">
+      <div class="article-block delay-1" data-aos="fade-up" data-aos-delay="100">
+        <!-- Gambar preview artikel karakter -->
+        <!-- GANTI GAMBAR: ubah URL di bawah -->
+        <div class="img-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80"
+            alt="Pena dan kertas — simbol menulis karakter fiksi yang autentik"
+          >
+        </div>
+        <div style="margin-bottom: 0.6rem;">
+          <span class="tag">fiksi kreatif</span>
+        </div>
+        <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.7rem; color: #f0eeff;">
+          <i class="fas fa-pen-fancy" style="color: var(--warna-aksen);"></i> Karakter Autentik
+        </h3>
+        <p style="color: rgba(232,230,240,0.65); font-size: 0.95rem; margin-bottom: 1rem;">
+          "Tanpa karakter yang kuat, alur sebaik apa pun akan terasa datar." Pelajari teknik menghidupkan tokoh fiksi.
+        </p>
+        <a href="artikel.html#karakter" style="color: var(--warna-aksen); font-weight: 600; text-decoration: none; font-size: 0.9rem;">
+          Baca selengkapnya <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-      <div class="article-block">
-        <h3><i class="fas fa-door-open"></i> Esensi Imaginarium</h3>
-        <p>Lebih dari sekadar majalah: ruang kreatif tempat realitas dan imajinasi saling bertemu.</p>
-        <a href="artikel.html#esensi" style="font-weight: 600;">Baca selengkapnya →</a>
+
+      <div class="article-block delay-2" data-aos="fade-up" data-aos-delay="200">
+        <!-- Gambar preview esensi imaginarium -->
+        <!-- GANTI GAMBAR: ubah URL di bawah -->
+        <div class="img-wrapper">
+          <img
+            src="https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?w=600&q=80"
+            alt="Cahaya digital dan abstrak — representasi perpaduan teknologi dan imajinasi kreatif"
+          >
+        </div>
+        <div style="margin-bottom: 0.6rem;">
+          <span class="tag">eksplorasi</span>
+        </div>
+        <h3 style="font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.7rem; color: #f0eeff;">
+          <i class="fas fa-door-open" style="color: var(--warna-aksen2);"></i> Esensi Imaginarium
+        </h3>
+        <p style="color: rgba(232,230,240,0.65); font-size: 0.95rem; margin-bottom: 1rem;">
+          Lebih dari sekadar majalah: ruang kreatif tempat realitas dan imajinasi saling bertemu.
+        </p>
+        <a href="artikel.html#esensi" style="color: var(--warna-aksen2); font-weight: 600; text-decoration: none; font-size: 0.9rem;">
+          Baca selengkapnya <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
     </div>
 
-    <!-- Footer sama seperti halaman lain -->
-    <div class="footer-note">
-      <div><span class="badge-imaginarium"><i class="far fa-star"></i> IMAGINARIUM · vol.01</span></div>
-      <div>✦ eksplorasi tanpa batas ✦</div>
-      <div><i class="fab fa-twitter"></i> <i class="fab fa-instagram" style="margin-left:12px;"></i></div>
-    </div>
-  </div>
-</div>
+    <!-- ============================================================
+         FEEDBACK SECTION
+         GANTI LINK GOOGLE FORM: ubah href di <a> di bawah
+         Link placeholder: https://forms.gle/XXXXXXXXXXXXX
+         ============================================================ -->
+    <section class="feedback-section" data-aos="fade-up">
+      <div style="font-size: 2rem; margin-bottom: 0.8rem;">💬</div>
+      <h3>Punya Masukan untuk IMAGINARIUM?</h3>
+      <p>Kami selalu ingin berkembang! Bagikan pendapat, kritik, atau saran kamu lewat form di bawah. Butuh 2 menit aja.</p>
+      <!-- GANTI href dengan link Google Form asli kamu -->
+      <a
+        href="https://forms.gle/GANTIDENGANLINKFORMKAMU"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-feedback"
+      >
+        <i class="fas fa-comment-dots"></i> Isi Feedback Sekarang
+      </a>
+    </section>
+
+    <!-- ============================================================
+         FOOTER - dengan ikon sosial media
+         CARA GANTI LINK SOSMED:
+         - href="https://instagram.com/AKUN_KAMU" untuk Instagram
+         - href="https://twitter.com/AKUN_KAMU" untuk Twitter/X
+         - href="https://websitekamu.com" untuk website
+         ============================================================ -->
+    <footer class="footer-note">
+      <div>
+        <span class="badge-imaginarium"><i class="far fa-star"></i> IMAGINARIUM · vol.01</span>
+      </div>
+      <div style="color: rgba(232,230,240,0.4);">✦ eksplorasi tanpa batas ✦</div>
+
+      <!-- Ikon sosial media - Font Awesome -->
+      <!-- Ganti href dengan link akun sosmed asli -->
+      <div class="social-links">
+        <!-- Instagram -->
+        <a
+          href="https://instagram.com/AKUN_INSTAGRAM_KAMU"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon instagram"
+          aria-label="Follow kami di Instagram"
+          title="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <!-- Twitter / X -->
+        <a
+          href="https://twitter.com/AKUN_TWITTER_KAMU"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon twitter"
+          aria-label="Follow kami di Twitter/X"
+          title="Twitter / X"
+        >
+          <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <!-- Website Eksternal -->
+        <a
+          href="https://WEBSITE_KAMU.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon website"
+          aria-label="Kunjungi website kami"
+          title="Website"
+        >
+          <i class="fas fa-globe"></i>
+        </a>
+      </div>
+    </footer>
+
+  </div><!-- /magazine-interior -->
+</div><!-- /magazine-wrapper -->
+
+<!-- ============================================================
+     AOS (Animate On Scroll) - animasi saat konten discroll
+     Ubah durasi di aos.init di bawah:
+     - duration: durasi animasi (ms)
+     - once: true = animasi hanya sekali, false = berulang
+     ============================================================ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  // Inisialisasi AOS - ubah pengaturan di sini
+  AOS.init({
+    duration: 700,    // durasi animasi dalam ms - ubah di sini
+    easing: 'ease-out-quart',
+    once: true,       // true = animasi hanya sekali saat scroll
+    offset: 80        // jarak dari bawah layar sebelum animasi mulai
+  });
+</script>
 </body>
 </html>
