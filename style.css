@@ -436,6 +436,53 @@ body {
 }
 
 /* ============================================================
+   FOTO BINGKAI OVAL - untuk kartu tim
+   
+   CARA GANTI FOTO:
+   - Ganti src di tag <img class="foto-tim"> di tim.html
+   - Gunakan foto dengan rasio 1:1 (kotak) agar tidak gepeng
+   - Ukuran ideal: minimal 300x300px
+   ============================================================ */
+.foto-wrapper {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 1.2rem;
+    border-radius: 50%;          /* bentuk lingkaran/oval */
+    overflow: hidden;
+    /* Border gradient warna-warni */
+    padding: 3px;
+    background: var(--grad-primer);
+    /* Transisi zoom saat hover - ubah durasi di sini */
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.35s ease;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.foto-wrapper:hover {
+    transform: scale(1.18);      /* perbesar saat hover/touch - ubah angka ini */
+    box-shadow: 0 0 0 4px rgba(255,107,107,0.25),
+                0 10px 30px rgba(255,107,107,0.3);
+}
+
+/* Gambar di dalam bingkai */
+.foto-tim {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;           /* foto tidak gepeng meski ukuran berbeda */
+    object-position: center top; /* fokus ke wajah (atas) */
+    border-radius: 50%;
+    display: block;
+    background: var(--warna-kartu);
+    transition: transform 0.35s ease;
+}
+
+.foto-wrapper:hover .foto-tim {
+    transform: scale(1.06);      /* foto ikut sedikit zoom di dalam bingkai */
+}
+
+/* ============================================================
    KARTU TIM - dengan efek hover flip/lift
    ============================================================ */
 .tim-grid {
