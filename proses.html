@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proses Kerja · IMAGINARIUM</title>
+
+  <!-- Font Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome untuk ikon & sosmed -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- AOS Animate On Scroll -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <!-- CSS Utama -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="magazine-wrapper">
+  <div class="magazine-interior">
+
+    <!-- HEADER & NAVIGASI -->
+    <header class="magazine-header">
+      <div class="masthead">
+        <h1>IMAGINARIUM</h1>
+        <div class="edition-badge">
+          <div class="edition">Proses Kerja · Workflow Tim</div>
+          <div class="tagline-digital"><i class="fas fa-sitemap"></i> behind the scenes</div>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+        <a href="artikel.html"><i class="fas fa-newspaper"></i> Artikel</a>
+        <a href="editorial.html"><i class="fas fa-feather-alt"></i> Editorial</a>
+        <a href="proses.html" class="aktif"><i class="fas fa-sitemap"></i> Proses</a>
+        <!-- Halaman ini aktif -->
+        <a href="tim.html"><i class="fas fa-users"></i> Tim</a>
+      </nav>
+    </header>
+
+    <!-- ============================================================
+         INTRO SECTION
+         ============================================================ -->
+    <section class="article-block" data-aos="fade-up">
+      <div style="margin-bottom: 0.8rem;">
+        <span class="tag">✦ Behind the Scenes</span>
+        <span class="tag">workflow</span>
+      </div>
+      <div class="article-title">
+        <i class="fas fa-sitemap" style="color: var(--warna-aksen3);"></i>
+        Bagaimana IMAGINARIUM Dibuat?
+      </div>
+      <p class="lead">
+        "Dari ide yang tersebar, menjadi majalah yang terbit — ini adalah perjalanan enam tahap kami."
+      </p>
+      <p style="color: rgba(232,230,240,0.7); line-height: 1.9;">
+        Setiap edisi IMAGINARIUM melewati proses yang terstruktur. Mulai dari sesi brainstorming hingga publikasi online,
+        setiap tahap dikerjakan dengan kolaborasi penuh antar anggota tim.
+        Klik tiap tahap di bawah untuk melihat penjelasan lengkapnya.
+      </p>
+    </section>
+
+    <!-- ============================================================
+         WORKFLOW ACCORDION
+         Klik / tap tiap tahap untuk membuka script presentasi
+         CARA EDIT SCRIPT: ubah teks di dalam workflowSteps di bagian JS
+         ============================================================ -->
+    <section class="article-block" data-aos="fade-up">
+      <div class="article-title" style="font-size: 1.6rem; margin-bottom: 0.5rem;">
+        <i class="fas fa-list-ol" style="color: var(--warna-aksen2);"></i>
+        Alur Kerja Tim
+      </div>
+      <p style="color: rgba(232,230,240,0.5); font-size: 0.9rem; margin-bottom: 1.8rem;">
+        <i class="fas fa-hand-pointer"></i> Ketuk / klik tiap tahap untuk membaca script presentasi
+      </p>
+
+      <!-- Container accordion - diisi oleh JavaScript di bawah -->
+      <div id="workflow-accordion" style="display: flex; flex-direction: column; gap: 10px;"></div>
+    </section>
+
+    <!-- FOOTER dengan sosial media -->
+    <footer class="footer-note">
+      <div><span class="badge-imaginarium">✦ IMAGINARIUM · proses kerja</span></div>
+      <div style="color: rgba(232,230,240,0.4);">behind the scenes</div>
+      <div class="social-links">
+        <a href="https://instagram.com/AKUN_INSTAGRAM_KAMU" target="_blank" rel="noopener noreferrer"
+           class="social-icon instagram" aria-label="Instagram" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/AKUN_TWITTER_KAMU" target="_blank" rel="noopener noreferrer"
+           class="social-icon twitter" aria-label="Twitter/X" title="Twitter / X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://WEBSITE_KAMU.com" target="_blank" rel="noopener noreferrer"
+           class="social-icon website" aria-label="Website" title="Website">
+          <i class="fas fa-globe"></i>
+        </a>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<!-- AOS Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, easing: 'ease-out-quart', once: true, offset: 80 });
+</script>
+
+<!-- ============================================================
+     WORKFLOW ACCORDION SCRIPT
+     CARA EDIT: ubah teks script di dalam array workflowSteps
+     ============================================================ -->
+<script>
+  // Data tiap tahap - ubah label dan script sesuai kebutuhan
+  const workflowSteps = [
+    {
+      label: "Tahap 01 — Brainstorming ide",
+      icon: "fas fa-lightbulb",
+      script: `"Langkah pertama yang kami lakukan adalah brainstorming bersama seluruh anggota tim. Kami mendiskusikan tema yang relevan dan akhirnya sepakat memilih tema Eksplorasi Imajinasi Tanpa Batas. Tema ini kami pilih karena mencerminkan kehidupan mahasiswa Teknik Informatika yang setiap harinya berhadapan dengan logika, namun tetap membutuhkan ruang untuk berkreasi dan berekspresi."`
+    },
+    {
+      label: "Tahap 02 — Penulisan artikel",
+      icon: "fas fa-pencil-alt",
+      script: `"Setelah tema disepakati, Satria sebagai Chief Editor membagi topik kepada masing-masing anggota. Miftahhudin menulis artikel utama tentang membangun karakter dan esensi Imaginarium, Aditya menangani bagian editorial dan opini, sementara seluruh tim berkontribusi dalam menyusun konten feature utama tentang Renaisans Imajinasi."`
+    },
+    {
+      label: "Tahap 03 — Editing bahasa",
+      icon: "fas fa-spell-check",
+      script: `"Setelah seluruh artikel selesai ditulis, Aditya Prima selaku Editor Bahasa memeriksa setiap tulisan dari sisi ejaan, diksi, dan alur kalimat. Tujuannya agar semua artikel terasa konsisten, mengalir dengan baik, dan sesuai dengan gaya bahasa majalah kami yang santai namun tetap berbobot."`
+    },
+    {
+      label: "Tahap 04 — Peer review antar anggota",
+      icon: "fas fa-users",
+      script: `"Sebelum masuk ke tahap desain, setiap artikel melewati proses peer review. Masing-masing anggota saling membaca dan memberikan masukan terhadap tulisan anggota lain. Tahap ini penting untuk memastikan isi artikel valid, tidak bias, dan sudah layak untuk dipublikasikan."`
+    },
+    {
+      label: "Tahap 05 — Desain layout digital",
+      icon: "fas fa-paint-brush",
+      script: `"Setelah semua konten disetujui, Ihsan selaku Layout dan Desainer mulai mengintegrasikan seluruh artikel ke dalam tampilan website. Mulai dari pemilihan warna, font, tata letak halaman, hingga penambahan gambar dan animasi — semuanya dirancang agar terlihat modern dan menarik bagi pembaca muda."`
+    },
+    {
+      label: "Tahap 06 — Publikasi online",
+      icon: "fas fa-globe",
+      script: `"Tahap terakhir adalah mempublikasikan majalah secara online. Website IMAGINARIUM kami upload ke platform yang dapat diakses oleh siapa saja. Link publikasi juga sudah kami siapkan untuk disubmit di OLU sebagai bagian dari kelengkapan UTS."`
+    }
+  ];
+
+  let openIdx = null;
+  const acc = document.getElementById('workflow-accordion');
+
+  workflowSteps.forEach((step, i) => {
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; overflow: hidden; background: rgba(255,255,255,0.04); transition: border-color 0.25s ease;';
+
+    const btn = document.createElement('button');
+    btn.style.cssText = 'width:100%; text-align:left; padding: 16px 18px; background: transparent; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; transition: background 0.2s ease;';
+
+    // Hover effect tombol
+    btn.addEventListener('mouseenter', () => btn.style.background = 'rgba(255,255,255,0.05)');
+    btn.addEventListener('mouseleave', () => { if (openIdx !== i) btn.style.background = 'transparent'; });
+
+    // Label dengan ikon
+    const left = document.createElement('div');
+    left.style.cssText = 'display: flex; align-items: center; gap: 12px;';
+
+    const iconEl = document.createElement('i');
+    iconEl.className = step.icon;
+    iconEl.style.cssText = 'font-size: 1rem; color: rgba(249,202,36,0.8); width: 20px; text-align: center; flex-shrink: 0;';
+
+    const lbl = document.createElement('span');
+    lbl.textContent = step.label;
+    lbl.style.cssText = 'font-size: 1rem; font-weight: 600; color: #f0eeff; font-family: var(--font-display, sans-serif);';
+
+    left.appendChild(iconEl);
+    left.appendChild(lbl);
+
+    // Panah
+    const arr = document.createElement('span');
+    arr.textContent = '›';
+    arr.style.cssText = 'font-size: 1.5rem; color: rgba(232,230,240,0.35); transition: transform 0.3s ease; display: inline-block; flex-shrink: 0; line-height: 1;';
+
+    btn.appendChild(left);
+    btn.appendChild(arr);
+
+    // Panel isi script
+    const panel = document.createElement('div');
+    panel.style.cssText = 'max-height: 0; overflow: hidden; transition: max-height 0.35s ease;';
+
+    const txt = document.createElement('p');
+    txt.textContent = step.script;
+    txt.style.cssText = 'font-size: 0.95rem; color: rgba(232,230,240,0.7); line-height: 1.85; font-style: italic; margin: 0; padding: 14px 18px 18px 50px; border-top: 1px solid rgba(255,255,255,0.07); font-family: var(--font-serif, serif);';
+
+    panel.appendChild(txt);
+
+    // Logika buka/tutup
+    btn.addEventListener('click', () => {
+      const isOpen = openIdx === i;
+
+      // Tutup semua
+      acc.querySelectorAll('.wf-panel').forEach((p, j) => {
+        p.style.maxHeight = '0';
+        acc.querySelectorAll('.wf-arrow')[j].style.transform = 'rotate(0deg)';
+        acc.querySelectorAll('.wf-wrap')[j].style.borderColor = 'rgba(255,255,255,0.1)';
+        acc.querySelectorAll('.wf-btn')[j].style.background = 'transparent';
+      });
+
+      // Buka yang diklik (jika belum terbuka)
+      if (!isOpen) {
+        panel.style.maxHeight = '300px';
+        arr.style.transform = 'rotate(90deg)';
+        wrap.style.borderColor = 'rgba(249,202,36,0.3)'; // highlight border saat aktif
+        btn.style.background = 'rgba(249,202,36,0.05)';
+        openIdx = i;
+      } else {
+        openIdx = null;
+      }
+    });
+
+    panel.classList.add('wf-panel');
+    arr.classList.add('wf-arrow');
+    wrap.classList.add('wf-wrap');
+    btn.classList.add('wf-btn');
+
+    wrap.appendChild(btn);
+    wrap.appendChild(panel);
+    acc.appendChild(wrap);
+  });
+</script>
+
+</body>
+</html>
