@@ -1,0 +1,459 @@
+/* ========================================
+   IMAGINARIUM - STYLE MINIMALIS EDITORIAL
+   Minimalist · Flat · High Typography · Clean
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;1,400;1,600&display=swap');
+
+/* ---------- RESET & VARIABEL WARNA ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* === WARNA UTAMA (Flat & Solid) === */
+    --warna-teks: #e8e6f0;           
+    --warna-latar: #0f0e17;          /* Latar belakang solid gelap */
+    
+    /* GRADIENT AKSEN (Hanya untuk Teks & Elemen Kecil) */
+    --grad-primer: linear-gradient(135deg, #ff6b6b, #f9ca24);  
+    --grad-kedua: linear-gradient(135deg, #a29bfe, #fd79a8);   
+    --grad-ketiga: linear-gradient(135deg, #00cec9, #6c5ce7);  
+    --grad-hero: linear-gradient(135deg, #ff6b6b 0%, #f9ca24 50%, #a29bfe 100%);
+
+    --warna-aksen: #ff6b6b;          
+    --warna-aksen2: #a29bfe;         
+    --warna-aksen3: #f9ca24;         
+
+    /* Garis pembatas minimalis pengganti kotak */
+    --border-tipis: rgba(255, 255, 255, 0.08); 
+
+    /* === TIPOGRAFI === */
+    --font-display: 'Syne', sans-serif;    
+    --font-utama: 'DM Sans', sans-serif;   
+    --font-serif: 'Crimson Pro', serif;    
+}
+
+/* ============================================================
+   BASE BODY
+   ============================================================ */
+body {
+    background: var(--warna-latar);
+    font-family: var(--font-utama);
+    color: var(--warna-teks);
+    line-height: 1.75;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+/* ---------- ANIMASI DASAR ---------- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ============================================================
+   WRAPPER UTAMA MAJALAH (Menghapus Efek Kotak Kaca Halaman)
+   ============================================================ */
+.magazine-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: transparent; /* Transparan, menyatu dengan latar body */
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.magazine-interior {
+    padding: 1rem 0; 
+}
+
+@media (max-width: 640px) {
+    .magazine-interior { padding: 1rem 0.5rem; }
+}
+
+/* ============================================================
+   HEADER & NAVIGASI
+   ============================================================ */
+.magazine-header {
+    margin-bottom: 4rem;
+    border-bottom: 1px solid var(--border-tipis);
+    padding-bottom: 2rem;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.masthead h1 {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    text-transform: uppercase;
+    background: var(--grad-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.edition-badge {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.edition {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgba(232,230,240,0.6);
+}
+
+.tagline-digital {
+    border: 1px solid var(--warna-aksen2);
+    color: var(--warna-aksen2);
+    padding: 0.25rem 1rem;
+    border-radius: 40px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+/* NAVIGASI MINIMALIS */
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-weight: 500;
+    color: rgba(232,230,240,0.5);
+    padding: 0.25rem 0;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav-menu a:hover {
+    color: #fff;
+}
+
+.nav-menu a.aktif {
+    color: var(--warna-aksen3);
+    font-weight: 700;
+}
+
+/* ============================================================
+   LAYOUT BLOK KONTEN (Menghilangkan Background Kartu/Kotak)
+   ============================================================ */
+.article-block, .hero-section, .feedback-section {
+    background: transparent !important; /* Menghapus background kotak */
+    border: none !important;            /* Menghapus border tebal */
+    box-shadow: none !important;        /* Menghapus bayangan bersinar */
+    border-radius: 0 !important;        
+    padding: 0 !important;              
+    margin-bottom: 5rem;
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.article-title {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.article-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(232,230,240,0.4);
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-family: var(--font-serif);
+    border-left: 2px solid var(--warna-aksen);
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgba(232,230,240,0.9);
+    font-style: italic;
+    line-height: 1.8;
+}
+
+/* PULL QUOTE MINIMALIS MURNI */
+.pull-quote {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    padding: 2.5rem 0;
+    margin: 3rem 0;
+    background: transparent;
+    font-style: italic;
+    text-align: center;
+    border-top: 1px solid var(--border-tipis);
+    border-bottom: 1px solid var(--border-tipis);
+    border-left: none;
+    border-right: none;
+    color: #fff;
+}
+
+/* ============================================================
+   GAMBAR DAN ELEMEN VISUAL
+   ============================================================ */
+.img-wrapper {
+    overflow: hidden;
+    border-radius: 4px; 
+    margin-bottom: 1.5rem;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%); 
+    transition: filter 0.3s ease, transform 0.5s ease;
+}
+
+.img-wrapper:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.article-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition: all .3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-6px);
+}
+
+.article-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.25rem;
+}
+
+.card-content h3 {
+    margin: 0.75rem 0;
+}
+
+.card-content p {
+    opacity: 0.8;
+    line-height: 1.7;
+}
+
+/* ============================================================
+   GRID DUA KOLOM
+   ============================================================ */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem; 
+}
+
+@media (max-width: 700px) {
+    .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+    .masthead h1 { font-size: 2.8rem; }
+}
+
+/* ============================================================
+   KARTU TIM MINIMALIS (Sleek Typographic Style)
+   ============================================================ */
+.tim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.kartu-tim {
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: left; 
+}
+
+.foto-wrapper {
+    width: 90px;
+    height: 90px;
+    margin: 0 0 1rem 0; 
+    border-radius: 50%;
+    overflow: hidden;
+    background: transparent;
+}
+
+.foto-tim {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.kartu-tim:hover .foto-tim {
+    filter: grayscale(0%);
+}
+
+.kartu-tim h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.kartu-tim .jabatan {
+    font-weight: 600;
+    color: var(--warna-aksen2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   TOMBOL & AKSI FLAT
+   ============================================================ */
+.btn-primer {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff; 
+    color: #0f0e17;
+    padding: 0.75rem 1.8rem;
+    border-radius: 4px; 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primer:hover {
+    background: var(--warna-aksen3);
+    transform: translateY(-2px);
+}
+
+.btn-sekunder {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #fff; 
+    font-size: 0.9rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* AREA FEEDBACK CLEAN CALL TO ACTION */
+.feedback-section {
+    text-align: center;
+    padding: 4rem 0 !important;
+    border-top: 1px solid var(--border-tipis) !important;
+    border-bottom: 1px solid var(--border-tipis) !important;
+}
+
+.btn-feedback {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--warna-aksen3);
+    border: 1px solid var(--warna-aksen3);
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.btn-feedback:hover {
+    background: var(--warna-aksen3);
+    color: #0f0e17;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-note {
+    margin-top: 6rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-tipis);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: rgba(232,230,240,0.4);
+}
+
+.badge-imaginarium {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.social-icon {
+    color: rgba(232,230,240,0.4);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.social-icon:hover {
+    color: #fff;
+}

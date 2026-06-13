@@ -1,0 +1,617 @@
+/* ========================================
+   IMAGINARIUM - MOBILE CSS (320px - 768px)
+   Fluid Nav · Clean Layout · Dark Theme
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;1,400;1,600&display=swap');
+
+/* ============================================================
+   RESET & VARIABEL
+   ============================================================ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --warna-teks:    #e8e6f0;
+    --warna-latar:   #0f0e17;
+
+    --grad-hero:     linear-gradient(135deg, #ff6b6b 0%, #f9ca24 50%, #a29bfe 100%);
+    --grad-primer:   linear-gradient(135deg, #ff6b6b, #f9ca24);
+    --grad-kedua:    linear-gradient(135deg, #a29bfe, #fd79a8);
+    --grad-ketiga:   linear-gradient(135deg, #00cec9, #6c5ce7);
+
+    --warna-aksen:   #ff6b6b;
+    --warna-aksen2:  #a29bfe;
+    --warna-aksen3:  #f9ca24;
+
+    --border-tipis:  rgba(255, 255, 255, 0.08);
+    --border-sedang: rgba(255, 255, 255, 0.14);
+
+    --font-display:  'Syne', sans-serif;
+    --font-utama:    'DM Sans', sans-serif;
+    --font-serif:    'Crimson Pro', serif;
+
+    --nav-tinggi:    60px;
+    --nav-bg:        rgba(15, 14, 23, 0.97);
+    --transisi:      0.25s ease;
+}
+
+/* ============================================================
+   ANIMASI
+   ============================================================ */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--warna-latar);
+    font-family: var(--font-utama);
+    color: var(--warna-teks);
+    line-height: 1.65;
+    font-size: 16px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: calc(var(--nav-tinggi) + 1.5rem);
+    padding-bottom: 2rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.magazine-wrapper {
+    width: 100%;
+    max-width: 100%;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.magazine-interior {
+    width: 100%;
+}
+
+/* ============================================================
+   NAVIGASI FLUID — STICKY + HAMBURGER
+   ============================================================ */
+
+/* Sticky bar */
+.magazine-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-tipis);
+    padding: 0 1.25rem;
+    height: var(--nav-tinggi);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeIn 0.3s ease-out;
+    /* Override: hapus styling halaman asli */
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* Logo dalam nav bar */
+.masthead {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.masthead h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 5.5vw, 1.65rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-transform: uppercase;
+    background: var(--grad-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Sembunyikan edition-badge dalam nav — tampil di bawah hero */
+.edition-badge {
+    display: none;
+}
+
+/* ---- Tombol Hamburger (dibuat via JS) ---- */
+.nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--border-sedang);
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background var(--transisi), border-color var(--transisi);
+}
+
+.nav-toggle.aktif {
+    background: rgba(162, 155, 254, 0.12);
+    border-color: var(--warna-aksen2);
+}
+
+/* Tiga garis hamburger */
+.nav-toggle .garis {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--warna-teks);
+    border-radius: 2px;
+    transition: transform var(--transisi), opacity var(--transisi);
+    transform-origin: center;
+}
+
+/* Animasi → X saat aktif */
+.nav-toggle.aktif .garis:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.aktif .garis:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle.aktif .garis:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- Panel Dropdown Menu ---- */
+.nav-menu {
+    position: fixed;
+    top: var(--nav-tinggi);
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-tipis);
+    padding: 0.5rem 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    /* Tersembunyi default */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity var(--transisi), transform var(--transisi);
+}
+
+.nav-menu.aktif {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    animation: slideDown 0.22s ease-out;
+}
+
+/* Link dalam menu */
+.nav-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: rgba(232, 230, 240, 0.75);
+    text-decoration: none;
+    font-family: var(--font-utama);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.7rem 0.75rem;
+    border-radius: 10px;
+    transition: background var(--transisi), color var(--transisi);
+    min-height: 44px;
+}
+
+.nav-menu a i {
+    font-size: 1rem;
+    color: var(--warna-aksen2);
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.nav-menu a:active,
+.nav-menu a:hover {
+    background: rgba(162, 155, 254, 0.1);
+    color: #fff;
+}
+
+.nav-menu a:active i,
+.nav-menu a:hover i {
+    color: var(--warna-aksen3);
+}
+
+/* Garis pemisah setelah link pertama */
+.nav-menu a:first-child {
+    border-bottom: 1px solid var(--border-tipis);
+    border-radius: 0;
+    margin-bottom: 0.3rem;
+    padding-bottom: 0.9rem;
+}
+
+/* ---- Overlay gelap saat menu terbuka ---- */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: var(--nav-tinggi) 0 0 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    animation: fadeIn 0.2s ease;
+}
+
+.nav-overlay.aktif {
+    display: block;
+}
+
+/* ============================================================
+   EDITION BADGE — versi halaman (di bawah header, bukan dalam nav)
+   ============================================================ */
+.hero-edition-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.edition {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: rgba(232, 230, 240, 0.7);
+}
+
+.tagline-digital {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--warna-aksen2);
+    color: var(--warna-aksen2);
+    padding: 0.25rem 0.9rem;
+    border-radius: 40px;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+}
+
+/* ============================================================
+   HERO & SECTION TITLE
+   ============================================================ */
+.hero-section {
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.5s ease-out 0.1s both;
+}
+
+.article-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.55rem, 6.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 1rem;
+    word-break: break-word;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    word-break: break-word;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-title i {
+    color: var(--warna-aksen3);
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   TIPOGRAFI
+   ============================================================ */
+.lead {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: rgba(232, 230, 240, 0.9);
+    border-left: 3px solid var(--warna-aksen);
+    border-radius: 0;
+    padding-left: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(232, 230, 240, 0.78);
+    margin-bottom: 1rem;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--warna-aksen);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
+
+/* ============================================================
+   BLOK ARTIKEL
+   ============================================================ */
+.article-block {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.5s ease-out both;
+}
+
+.img-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.img-wrapper img:active {
+    transform: scale(1.03);
+}
+
+.article-block h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 0.45rem;
+}
+
+/* ============================================================
+   TOMBOL & LINK
+   ============================================================ */
+.article-block a,
+.btn-sekunder {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--warna-aksen3);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    padding: 10px 0;
+    min-height: 44px;
+    transition: color var(--transisi);
+}
+
+.article-block a:active,
+.btn-sekunder:active {
+    color: var(--warna-aksen);
+}
+
+.btn-feedback {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--grad-kedua);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 40px;
+    min-height: 44px;
+    margin-top: 1rem;
+    transition: opacity var(--transisi), transform var(--transisi);
+}
+
+.btn-feedback:active {
+    opacity: 0.85;
+    transform: scale(0.97);
+}
+
+/* ============================================================
+   FEEDBACK SECTION
+   ============================================================ */
+.feedback-section {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-tipis);
+    border-radius: 14px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.5s ease-out both;
+}
+
+.feedback-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.feedback-section p {
+    font-size: 0.88rem;
+    margin-bottom: 0;
+}
+
+/* ============================================================
+   GRID → SATU KOLOM DI MOBILE
+   ============================================================ */
+.two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.two-col .article-block + .article-block {
+    border-top: 1px solid var(--border-tipis);
+    padding-top: 2rem;
+}
+
+/* ============================================================
+   TIM REDAKSI
+   ============================================================ */
+#tim {
+    margin-bottom: 2.5rem;
+}
+
+.tim-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+    margin-top: 1.25rem;
+}
+
+.kartu-tim {
+    text-align: center;
+}
+
+.foto-wrapper {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 0.7rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--border-sedang);
+}
+
+.foto-tim {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.foto-tim:active {
+    filter: grayscale(0%);
+}
+
+.kartu-tim h3 {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+}
+
+.kartu-tim .jabatan {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--warna-aksen2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer-note {
+    margin-top: 3rem;
+    padding: 1.75rem 0;
+    border-top: 1px solid var(--border-tipis);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    font-size: 0.82rem;
+    color: rgba(232, 230, 240, 0.5);
+}
+
+.badge-imaginarium {
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.75rem;
+}
+
+.social-icon {
+    color: rgba(232, 230, 240, 0.5);
+    text-decoration: none;
+    font-size: 1.3rem;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color var(--transisi);
+}
+
+.social-icon:active {
+    color: #fff;
+}
+
+/* ============================================================
+   MISC
+   ============================================================ */
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.article-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}

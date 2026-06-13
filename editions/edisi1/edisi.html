@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilih Artikel · IMAGINARIUM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Crimson+Pro:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Style khusus untuk Desktop (Layar Lebar: mulai dari 769px ke atas) -->
+  <link rel="stylesheet" href="../../assets/style/desktop.css" media="screen and (min-width: 769px)">
+  <link rel="stylesheet" href="../../assets/style/mobile.css" media="screen and (max-width: 768px)">
+</head>
+<body>
+<div class="magazine-wrapper">
+  <div class="magazine-interior">
+    <header class="magazine-header">
+      <div class="masthead">
+        <h1>IMAGINARIUM</h1>
+        <div class="edition-badge">
+          <div class="edition">Pilih Artikel</div>
+          <div class="tagline-digital"><i class="fas fa-feather"></i> fiksi & teknologi</div>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <a href="../../index.html"><i class="fas fa-home"></i> Beranda</a>
+        <a href="edisi.html"><i class="fas fa-list"></i> Pilih Artikel</a>
+        <a href="editorial.html"><i class="fas fa-feather-alt"></i> Editorial</a>
+        <a href="proses.html"><i class="fas fa-sitemap"></i> Proses</a>
+        <a href="../../index.html#tim"> <i class="fas fa-users"></i> Tim</a>
+    </header>
+
+    <!-- PREVIEWS -->
+    <div class="two-col" style="margin-top: 3rem;">
+      <div class="article-block" data-aos="fade-up" data-aos-delay="100">
+        <div class="img-wrapper">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=80" alt="Karakter">
+        </div>
+        <span class="tag">fiksi kreatif</span>
+        <h3>Artikel 1: Karakter Autentik</h3>
+        <p>Seni membangun karakter fiksi yang hidup.</p>
+        <a href="artikel1.html" class="btn-sekunder">Baca <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="article-block" data-aos="fade-up" data-aos-delay="200">
+        <div class="img-wrapper">
+          <img src="../../assets/foto/foto.webp" alt="Esensi">
+        </div>
+        <span class="tag">eksplorasi</span>
+        <h3>Artikel 2: Esensi Imaginarium</h3>
+        <p>Ruang kreatif realitas dan imajinasi bertemu.</p>
+        <a href="artikel2.html" class="btn-sekunder">Baca <i class="fas fa-arrow-right"></i></a>
+        </div>
+      <div class="article-block" data-aos="fade-up" data-aos-delay="300">
+        <div class="img-wrapper">
+          <img src="../../assets/foto/foto2.webp" alt="Karakter">
+        </div>
+        <span class="tag">Majalah</span>
+        <h3>Artikel 3: Layar Majalah Digital</h3>
+        <p>Di Balik Layar Majalah Digital: Antara Ide, Proses, dan Identitas.</p>
+        <a href="artikel3.html" class="btn-sekunder">Baca <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="article-block" data-aos="fade-up" data-aos-delay="300">
+        <div class="img-wrapper">
+          <img src="../../assets/foto/foto3.webp" alt="Karakter">
+        </div>
+        <span class="tag">Teknologi</span>
+        <h3>Artikel 4: Teknologi Mengubah Cara Kita Mengalami Fiksi</h3>
+        <p>Teknologi modern juga telah mengubah cara fiksi dibuat, disebarkan, dan dinikmati.</p>
+        <a href="artikel4.html" class="btn-sekunder">Baca <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <section class="feedback-section" data-aos="fade-up">
+      <div style="font-size: 2rem; margin-bottom: 0.8rem;">✍️</div>
+      <h3>Ada artikel yang ingin kamu usulkan?</h3>
+      <p>Sampaikan ide atau masukan kamu tentang konten IMAGINARIUM. Kami baca setiap masukan!</p>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLScU7Uakhdyty6iMg6Qb9leoOK-JAGUoBOM7HIf2Vrie3Jutig/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-feedback"
+      >
+        <i class="fas fa-comment-dots"></i> Kirim Masukan
+      </a>
+    </section>
+    <footer class="footer-note">
+      <span class="badge-imaginarium">IMAGINARIUM · Artikel</span>
+      <div style="color: rgba(232,230,240,0.4);">imajinasi tanpa batas</div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/uhamkaid?igsh=YWpzdTBmZ211djMx" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/UhamkaID" target="_blank" class="social-icon twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.uhamka.ac.id" target="_blank" class="social-icon website"><i class="fas fa-globe"></i></a>
+      </div>
+    </footer>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="../../assets/style/nav-mobile.js"></script>
+<script>
+  AOS.init({duration:700,easing:'ease-out-quart',once:true,offset:80});
+  function pilihArtikel() {
+    const select = document.getElementById('artikel-select');
+    const url = select.value;
+    if (url) window.location.href = url;
+    else alert('Pilih artikel dulu!');
+  }
+</script>
+</body>
+</html>
+
